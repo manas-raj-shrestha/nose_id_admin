@@ -19,21 +19,17 @@ class _ScreenshotMapperState extends State<ScreenshotMapper> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Row(
-        mainAxisSize: MainAxisSize.max,
+        mainAxisSize: MainAxisSize.min,
         children: [
           Flexible(
               flex: 2,
               child: Container(
-                color: Color(0xff1E3056),
-                child: Column(
-                  children: [_buildHeader(), _buildRoutesListView()],
-                ),
-              )),
+                  color: Color(0xff1E3056), child: _buildRoutesListView())),
           Flexible(
             flex: 8,
             child: Center(
                 child: Image.asset(
-                    "assets/${routeData[keys[selectedRouteIndex]]!.first}")),
+                    "${routeData[keys[selectedRouteIndex]]!.first}")),
           ),
         ],
       ),
@@ -44,6 +40,7 @@ class _ScreenshotMapperState extends State<ScreenshotMapper> {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
       child: ListView.builder(
+        physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemCount: data.keys.length,
         itemBuilder: (context, index) {

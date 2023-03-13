@@ -32,7 +32,8 @@ class _ScreenshotMapperState extends State<ScreenshotMapper> {
           Flexible(
             flex: 8,
             child: Center(
-                child: Image.asset(routeData[keys[selectedRouteIndex]]!.first)),
+                child: Image.asset(
+                    "assets/${routeData[keys[selectedRouteIndex]]!.first}")),
           ),
         ],
       ),

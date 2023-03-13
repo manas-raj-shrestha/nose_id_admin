@@ -40,7 +40,6 @@ class _ScreenshotMapperState extends State<ScreenshotMapper> {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
       child: ListView.builder(
-        physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemCount: data.keys.length,
         itemBuilder: (context, index) {
